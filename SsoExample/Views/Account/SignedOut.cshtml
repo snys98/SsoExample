@@ -1,0 +1,16 @@
+﻿@using System.Dynamic
+@{
+    ViewData["Title"] = "Signed out";
+}
+
+<h2>@ViewData["Title"]</h2>
+<p>
+    You have successfully signed out.
+</p>
+@*@Model.signOutIFrameUrl*@
+<iframe src="@(Model.signOutIFrameUrl)"></iframe>
+<script>
+    setInterval(() => {
+        location.href = "@(Model.postLogoutRedirectUri)";
+    }, 5000);
+</script>

@@ -1,0 +1,64 @@
+﻿@using SsoExample.Models.AccountViewModels
+@model SsoExample.Models.AccountViewModels.LoginViewModel
+
+@{
+    ViewData["Title"] = "极客格子安全登陆";
+}
+
+<div class="container">
+    <div class="row">
+
+        <div class="main col-md-4 col-md-offset-4 padding-inner">
+            <div class="header text-center">
+                <h4>Geexbox 帐号登录</h4>
+            </div>
+            
+            <form role="form" asp-action="Login">
+                <div class="row form-group">
+                    <label for="UsernameOrPhone">@Html.DisplayNameFor(x => x.UsernameOrPhone)</label>
+                    <input asp-for="UsernameOrPhone" type="text" class="form-control">
+                    <span asp-validation-for="UsernameOrPhone" class="text-danger"></span>
+                </div>
+                <div class="row form-group">
+                    <a class="pull-right" asp-action="ForgotPassword">忘记密码</a>
+                    <label for="Password">@Html.DisplayNameFor(x => x.Password)</label>
+                    <input asp-for="Password" type="password" class="form-control">
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="row form-group">
+                    <div class="checkbox pull-left">
+                        <label for="RememberMe">
+                            <input asp-for="RememberMe" type="checkbox" />
+                            @Html.DisplayNameFor(x => x.RememberMe)
+                        </label>
+                    </div>
+                    @Html.ValidationSummary(true)
+                </div>
+                <div class="row form-group">
+                    <button type="submit" class="btn btn btn-primary col-md-5 col-xs-5">
+                        登陆
+                    </button>
+                    <a class="btn btn btn-default col-md-offset-2 col-xs-offset-2 col-md-5 col-xs-5" asp-action="Register" asp-route-returnUrl="@(Model?.ReturnUrl ?? "")">注册</a>
+                </div>
+                <div class="row form-group padding-top">
+                    <h4 class="more-signin">社交账号登陆</h4>
+                </div>
+                <div class="row form-group">
+                    <div class="col-xs-6 col-md-6 text-center">
+                        <i class="fab fa-weixin fa-3x text-success"></i>
+                    </div>
+                    <div class="col-xs-6 col-md-6 text-center">
+                        <i class="fab fa-qq fa-3x text-primary"></i>
+                    </div>
+                </div>
+            </form>
+            
+
+        </div>
+
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

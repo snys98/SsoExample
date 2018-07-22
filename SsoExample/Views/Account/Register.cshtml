@@ -1,0 +1,69 @@
+﻿@using SsoExample.Models.AccountViewModels
+@model SsoExample.Models.AccountViewModels.RegisterViewModel
+
+@{
+    ViewData["Title"] = "极客格子账号注册";
+}
+
+<div class="container">
+    <div class="row">
+
+        <div class="main col-md-4 col-md-offset-4 padding-inner">
+            <div class="header text-center">
+                <h4>注册 Geexbox 账号</h4>
+            </div>
+            
+            <form role="form" asp-action="Register">
+                <div class="row form-group">
+                    <label asp-for="Phone">@Html.DisplayNameFor(x => x.Phone)</label>
+                    <input asp-for="Phone" type="text" class="form-control">
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+                @*<div class="row form-group">
+                    <div class="input-group">
+                        <label asp-for="Code">@Html.DisplayNameFor(x => x.Code)</label>
+                        <input asp-for="Code" type="text" value="123" class="form-control">
+                        <div class="input-group-addon">
+                            <div class="btn btn-default">发送验证码</div>
+                        </div>
+                    </div>
+                    <span asp-validation-for="Code" translate="yes" class="text-danger"></span>
+                </div>*@
+                <div class="row form-group">
+                    <label asp-for="Password">@Html.DisplayNameFor(x => x.Password)</label>
+                    <input asp-for="Password" type="password" class="form-control">
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="row form-group">
+                    <label asp-for="ConfirmPassword">@Html.DisplayNameFor(x => x.ConfirmPassword)</label>
+                    <input asp-for="ConfirmPassword" type="password" class="form-control">
+                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                </div>
+                <div class="row form-group">
+                    <button type="submit" class="btn btn btn-success col-md-offset-1 col-xs-offset-1 col-md-10 col-xs-10">
+                        注册
+                    </button>
+                </div>
+                @*<div class="row form-group padding-top">
+                    <h4 class="more-signin">通过社交账号注册</h4>
+                </div>
+                <div class="row form-group">
+                    <div class="col-xs-6 col-md-6 text-center">
+                        <i class="fab fa-weixin fa-3x text-success"></i>
+                    </div>
+                    <div class="col-xs-6 col-md-6 text-center">
+                        <i class="fab fa-qq fa-3x text-primary"></i>
+                    </div>
+                </div>*@
+            </form>
+            
+
+        </div>
+
+    </div>
+</div>
+
+@section Scripts {
+    
+    <partial name="_ValidationScriptsPartial" />
+}
