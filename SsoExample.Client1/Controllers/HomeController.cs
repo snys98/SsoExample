@@ -29,7 +29,9 @@ namespace SsoExample.Client1.Controllers
         {
             
             ViewData["Message"] = "Your application description page.";
-            return SignOut(OpenIdConnectDefaults.AuthenticationScheme, CookieAuthenticationDefaults.AuthenticationScheme);
+            await HttpContext.SignOutAsync(OpenIdConnectDefaults.AuthenticationScheme);
+            return Ok();
+            //return SignOut(OpenIdConnectDefaults.AuthenticationScheme, CookieAuthenticationDefaults.AuthenticationScheme);
         }
 
 

@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\_极客格子\Geexbox\Microex.All\Microex.All\Microex.All.csproj" />
+    <ProjectReference Include="..\Microex.All\Microex.All\Microex.All.csproj" />
   </ItemGroup>
 
   <ItemGroup>

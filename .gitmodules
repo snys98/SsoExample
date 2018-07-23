@@ -1,0 +1,3 @@
+[submodule "Microex.All"]
+	path = Microex.All
+	url = https://github.com/snys98/Microex.All.git
