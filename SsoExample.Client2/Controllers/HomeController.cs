@@ -21,26 +21,34 @@ namespace SsoExample.Client2.Controllers
         }
         public IActionResult Index()
         {
+            ViewBag.UserJson = HttpContext?.User?.Identity?.ToJson();
             return View();
         }
 
-        public IActionResult About()
+        public async Task<IActionResult> Logout()
         {
             return SignOut(OpenIdConnectDefaults.AuthenticationScheme, CookieAuthenticationDefaults.AuthenticationScheme);
         }
+
+        public async Task<IActionResult> FrontChannelLogout()
+        {
+            return SignOut(CookieAuthenticationDefaults.AuthenticationScheme);
+        }
+
+
+        [HttpGet]
+        [Authorize()]
+        public async Task<IActionResult> SilentLogin()
+        {
+            return Ok(HttpContext?.User?.Identity?.ToJson());
+        }
+
         [Authorize]
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";
 
             return View();
-        }
-
-        [HttpGet]
-        [Authorize]
-        public async Task<IActionResult> SilentLogin()
-        {
-            return Ok(HttpContext?.User?.Identity?.ToJson());
         }
 
         public IActionResult Privacy()

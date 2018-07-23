@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Microex.All.Extensions
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -47,6 +48,7 @@
         <footer>
             <p>&copy; 2018 - SsoExample</p>
         </footer>
+        @User.Identity.ToJson()
     </div>
 
     <environment include="Development">

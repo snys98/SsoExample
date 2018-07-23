@@ -25,15 +25,14 @@ namespace SsoExample.Client1.Controllers
             return View();
         }
 
-        public async Task<IActionResult> About()
+        public async Task<IActionResult> Logout()
         {
-            
-            ViewData["Message"] = "Your application description page.";
-            await HttpContext.SignOutAsync(OpenIdConnectDefaults.AuthenticationScheme);
-            return Ok();
-            //return SignOut(OpenIdConnectDefaults.AuthenticationScheme, CookieAuthenticationDefaults.AuthenticationScheme);
+            return SignOut(OpenIdConnectDefaults.AuthenticationScheme,CookieAuthenticationDefaults.AuthenticationScheme);
         }
-
+        public async Task<IActionResult> FrontChannelLogout()
+        {
+            return SignOut(CookieAuthenticationDefaults.AuthenticationScheme);
+        }
 
         [HttpGet]
         [Authorize()]

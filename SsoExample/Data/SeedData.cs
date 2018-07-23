@@ -39,8 +39,8 @@ namespace SsoExample.Data
                 RequireConsent = false,
                 AllowAccessTokensViaBrowser = true,
                 AllowedGrantTypes = GrantTypes.Hybrid,
-                FrontChannelLogoutUri = "https://localhost:44302/Home/LocalSignOut",
-                BackChannelLogoutUri = "https://localhost:44302/Home/LocalSignOut",
+                FrontChannelLogoutUri = "https://localhost:44302/Home/FrontChannelLogout",
+                BackChannelLogoutUri = "https://localhost:44302/Home/FrontChannelLogout",
                 AllowOfflineAccess = true,
             },
             new Client()
@@ -59,8 +59,8 @@ namespace SsoExample.Data
                 RequireConsent = false,
                 AllowAccessTokensViaBrowser = true,
                 AllowedGrantTypes = GrantTypes.Hybrid,
-                FrontChannelLogoutUri = "https://localhost:44303/Home/LocalSignOut",
-                BackChannelLogoutUri = "https://localhost:44303/Home/LocalSignOut",
+                FrontChannelLogoutUri = "https://localhost:44303/Home/FrontChannelLogout",
+                BackChannelLogoutUri = "https://localhost:44303/Home/FrontChannelLogout",
                 AllowOfflineAccess = true,
             },
         };
