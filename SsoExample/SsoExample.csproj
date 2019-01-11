@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
     <UserSecretsId>aspnet-SsoExample-7A95722E-5532-46D6-ABE7-9A7EB91F270F</UserSecretsId>
   </PropertyGroup>
 
